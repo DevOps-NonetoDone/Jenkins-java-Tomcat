@@ -1,12 +1,140 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>Simple Webapp</title>
-    <style>body{font-family: Arial; text-align:center; margin-top:100px}</style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Umesh Aveti — Portfolio</title>
+    <meta name="description" content="Portfolio of Umesh Aveti — DevOps enthusiast, Java/Tomcat projects." />
+    <style>
+      :root{--accent:#0b74de;--bg:#f6f8fb;--card:#ffffff;--muted:#6b7280}
+      *{box-sizing:border-box}
+      body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#0f172a;background:var(--bg)}
+      .container{max-width:1040px;margin:28px auto;padding:20px}
+      header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+      .brand{display:flex;gap:12px;align-items:center}
+      .avatar{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7ad0ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+      h1{margin:0;font-size:20px}
+      p.lead{margin:4px 0 0;color:var(--muted)}
+      nav a{margin-left:12px;color:var(--accent);text-decoration:none;font-weight:600}
+
+      .hero{display:flex;gap:24px;margin-top:22px;align-items:center}
+      .hero .intro{flex:1}
+      .cta{display:inline-block;margin-top:12px;padding:10px 16px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none}
+
+      .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:24px}
+      .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(12,20,40,0.06)}
+      h2{margin:0 0 12px}
+      ul.skills{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+      ul.skills li{background:#eef6ff;padding:8px 10px;border-radius:8px;color:#044b8b;font-weight:600}
+
+      .projects{display:flex;flex-direction:column;gap:12px}
+      .project{border-left:4px solid var(--accent);padding:12px;background:#fafcff;border-radius:8px}
+      .project small{color:var(--muted)}
+
+      footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
+
+      /* responsive */
+      @media (max-width:880px){
+        .grid{grid-template-columns:1fr}
+        header{flex-direction:column;align-items:flex-start}
+        .hero{flex-direction:column;align-items:flex-start}
+      }
+    </style>
   </head>
   <body>
-    <h1>Simple Webapp</h1>
-    <p>This page is served from Tomcat — deployed by Jenkins</p>
+    <main class="container">
+      <header>
+        <div class="brand">
+          <div class="avatar">UA</div>
+          <div>
+            <h1>Umesh Aveti</h1>
+            <p class="lead">DevOps enthusiast • Java & Tomcat • Automation & CI/CD</p>
+          </div>
+        </div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="intro">
+          <h2>Hello — I build reliable deployment pipelines</h2>
+          <p style="color:var(--muted);margin-top:8px;line-height:1.5">I’m focused on practical DevOps: CI/CD with Jenkins, building and deploying Java webapps to Tomcat, automating tests and infrastructure. Below are sample projects and quick links.</p>
+          <a class="cta" href="#projects">See Projects</a>
+        </div>
+        <div style="min-width:260px" class="card">
+          <h3 style="margin-top:0">Contact</h3>
+          <p style="margin:6px 0;color:var(--muted)">Email: <strong>your.email@example.com</strong></p>
+          <p style="margin:6px 0;color:var(--muted)">Location: India</p>
+          <p style="margin:10px 0 0"><a href="#contact" style="text-decoration:none;color:var(--accent);font-weight:700">Get in touch →</a></p>
+        </div>
+      </section>
+
+      <div class="grid">
+        <section class="card">
+          <h2 id="about">About</h2>
+          <p style="color:var(--muted);line-height:1.6">I convert code into stable releases by building automated pipelines. Comfortable with Maven, Jenkins, Git, Tomcat, and Linux/Windows environments. I like to keep things simple, repeatable and testable.</p>
+
+          <h3 style="margin-top:18px">Skills</h3>
+          <ul class="skills">
+            <li>Jenkins</li>
+            <li>Maven</li>
+            <li>Tomcat</li>
+            <li>Git</li>
+            <li>Bash / PowerShell</li>
+            <li>CI/CD</li>
+          </ul>
+
+          <h3 style="margin-top:18px">Education</h3>
+          <p style="color:var(--muted);margin:6px 0">B.Tech (or your degree) — Add institution & year</p>
+        </section>
+
+        <aside class="card">
+          <h2>Quick links</h2>
+          <p style="margin:6px 0;color:var(--muted)"><a href="https://github.com/DevOps-NonetoDone/Jenkins-java-Tomcat" target="_blank" rel="noopener">Project: Jenkins-java-Tomcat</a></p>
+          <p style="margin:6px 0;color:var(--muted)"><a href="#" target="_blank" rel="noopener">Resume (PDF)</a></p>
+        </aside>
+      </div>
+
+      <section class="card" style="margin-top:18px">
+        <h2 id="projects">Projects</h2>
+        <div class="projects">
+          <div class="project">
+            <strong>Simple Webapp (Java, WAR)</strong>
+            <div style="margin-top:6px"><small>Built with Maven — deployed to Tomcat via Jenkins pipeline.</small></div>
+            <p style="margin:8px 0;color:var(--muted)">This is a demo webapp that serves a static index.html. The Jenkins pipeline builds the WAR and deploys it to Tomcat's manager using manager-script credentials or by copying WAR into webapps.</p>
+            <a href="#" style="color:var(--accent);font-weight:700">View repo →</a>
+          </div>
+
+          <div class="project">
+            <strong>CI/CD Learning Projects</strong>
+            <div style="margin-top:6px"><small>Multiple pipelines: Poll SCM, webhook (ngrok for local), and multibranch setup.</small></div>
+            <p style="margin:8px 0;color:var(--muted)">Examples include configuring Poll SCM, using ngrok to expose local Jenkins for webhooks, and parameterized pipelines.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="contact" style="margin-top:18px">
+        <h2>Contact</h2>
+        <p style="color:var(--muted)">Interested in collaborating or have a question? Drop a message.</p>
+        <form onsubmit="event.preventDefault();alert('Thanks — replace with real form handling.');" style="display:flex;flex-direction:column;gap:8px;max-width:520px">
+          <input placeholder="Your name" required style="padding:10px;border-radius:8px;border:1px solid #e6eefb" />
+          <input placeholder="Email" required style="padding:10px;border-radius:8px;border:1px solid #e6eefb" />
+          <textarea placeholder="Message" rows="4" style="padding:10px;border-radius:8px;border:1px solid #e6eefb"></textarea>
+          <button style="padding:10px;border-radius:8px;border:0;background:var(--accent);color:#fff;font-weight:700;max-width:160px">Send message</button>
+        </form>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Umesh Aveti — Built with HTML &amp; simple CSS
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
+
